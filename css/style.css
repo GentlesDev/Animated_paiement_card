@@ -1,0 +1,225 @@
+.container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 2;
+}
+
+.warning {
+    color: red;
+    font-size: 12px;
+}
+
+.warning span {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.body-card {
+    position: relative;
+}
+
+.card .background {
+    width: 450px;
+    height: 250px;
+    border-radius: 30px;
+    position: absolute;
+    right: 250px;
+    bottom: 340px;
+    transform: rotateY(0);
+    transition: all 2s;
+}
+
+.hide {
+    display: none;
+}
+
+.card h2 {
+    font-size: 12px;
+}
+
+.card p {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card p, .card h2 {
+    margin: 0;
+    color: wheat;
+}
+
+.card .chip {
+    z-index: 1;
+    position: absolute;
+    width: 60px;
+    top: -25px;
+    left: 290px;
+}
+
+.print-number {
+    position: absolute;
+    z-index: 1;
+    left: 285px;
+    top: 50px;
+}
+
+.print-name {
+    position: absolute;
+    z-index: 1;
+    left: 270px;
+    top: 110px;
+}
+
+.print-date {
+    position: absolute;
+    z-index: 1;
+    left: 580px;
+    top: 110px;
+}
+
+.print-crypt {
+    position: absolute;
+    z-index: 1;
+    left: 610px;
+    top: 60px;
+}
+
+.paiement-form {
+    background-color: rgba(40, 39, 63, 0.8);
+    margin: 0 190px;
+    border-radius: 30px;
+    padding-top: 190px;
+    margin-top: 70px;
+}
+
+.form-info {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.form-info label {
+    width: 100%;
+}
+
+.form-info input {
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form-info input::placeholder {
+    color: #d41032;
+}
+
+.form-info.card-crypt, .form-info.card-date {
+    width: 50%;
+}
+
+.card-info {
+    display: flex;
+}
+
+.form-info.card-date {
+    flex-wrap: wrap;
+}
+
+.date {
+    margin-left: 30px;
+}
+
+.date select {
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #d41032;
+}
+
+.send {
+    cursor: pointer;
+    margin: 15px auto;
+    position: relative;
+    display: inline-block;
+    color: wheat;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+.send:hover {
+    background: #f7052d;
+    box-shadow: 0 0 10px #d41032, 0 0 40px #d41032, 0 0 80px #d41032;
+    transition-delay: 1s;
+}
+
+.send:hover p {
+    color: white;
+    transition-delay: 1s;
+}
+
+.send span {
+    position: absolute;
+    display: block;
+}
+
+.send span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d41032);
+}
+
+.send:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+.send span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #d41032);
+}
+
+.send:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.send span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #d41032);
+}
+
+.send:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.send span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #d41032);
+}
+
+.send:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}

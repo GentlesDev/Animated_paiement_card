@@ -11,63 +11,93 @@
 </head>
 
 <body>
-    <h1 class="title-main">Votre achat d'un montant de X€ !</h1>
-    <p class="p-main">Entrez vos informations pour effectuer le paiement</p>
-    <small class="warning">Ps: Ceci est une simulation, aucune carte ne sera débitée, mais <span>n'entrez surtout pas
-            vos coordonnées bancaires</span> !</small>
-    <div class="body-card">
-        <div class="card">
-            <img src="images/background_card.jpeg" alt="card background">
-        </div>
-        <div class="paiement-form">
-            <form method="get">
-                <div class="form-info card-number">
-                    <label for="card-number">Numéro de la carte / Card Number : </label>
-                    <input type="text" id="card-number" name="cardNumber" placeholder="#### #### #### ####" maxlength="16">
+    <div class="container">
+        <h1 class="title-main">Votre achat d'un montant de X€ !</h1>
+        <p class="p-main">Entrez vos informations pour effectuer le paiement</p>
+        <small class="warning">Ps: Ceci est une simulation, aucune carte ne sera débitée, mais <span>n'entrez surtout
+                pas
+                vos coordonnées bancaires</span> !</small>
+        <div class="body-card">
+            <div class="card">
+                <img class="chip" src="images/chip.png" alt="card chip">
+                <img class="background" src="images/background_card.jpeg" alt="card background">
+                <div class="print-number">
+                    <p>01</p>
                 </div>
-                <div class="form-info card-name">
-                    <label for="card-name">Nom du propriétaire / Card Owner : </label>
-                    <input type="text" id="card-name" name="cardName" placeholder="Will Smith">
+                <div class="print-name">
+                    <h2>Nom du propriétaire</h2>
+                    <p>01</p>
                 </div>
-                <div class="form-info card-date">
-                    <label for="card-date">Date d'expiration / Expiration Date : </label>
-                    <select name="month" id="card-date">
-                        <option value="month" selected>Mois / Month</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-                    <select name="year">
-                        <option value="year" selected>Année / Year</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
-                        <option value="2030">2030</option>
-                    </select>
+                <div class="print-date">
+                    <h2>Date d'expiration</h2>
+                    <p>01</p>
                 </div>
-                <div class="form-info card-crypt">
-                    <label for="card-crypt">CCV : </label>
-                    <input type="text" id="card-crypt" name="cardCrypt" placeholder="****" maxlength="4">
+                <div class="print-crypt hide">
+                    <h2>CCV</h2>
+                    <p>01</p>
                 </div>
-                <div class="form-info submit">
-                    <button type="submit">Envoyer / Submit</button>
-                </div>
-            </form>
+            </div>
+            <div class="paiement-form">
+                <form method="get">
+                    <div class="form-info card-number">
+                        <label for="card-number">Numéro de la carte / Card Number : </label>
+                        <input type="text" id="card-number" name="cardNumber" placeholder="#### #### #### ####"
+                            maxlength="16">
+                    </div>
+                    <div class="form-info card-name">
+                        <label for="card-name">Nom du propriétaire / Card Owner : </label>
+                        <input type="text" id="card-name" name="cardName" placeholder="Will Smith">
+                    </div>
+                    <div class="card-info">
+                        <div class="form-info card-date">
+                            <label for="card-date">Date d'expiration / Expiration Date : </label>
+                            <div class="date">
+                                <select name="month" id="card-date">
+                                    <option value="month" selected>Mois / Month</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <select name="year">
+                                    <option value="year" selected>Année / Year</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-info card-crypt">
+                            <label for="card-crypt">CCV : </label>
+                            <input type="text" id="card-crypt" name="cardCrypt" placeholder="****" maxlength="4">
+                        </div>
+                    </div>
+                    <div class="form-info submit">
+                        <button type="submit" class="send">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <p>Envoyer / Submit</p>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
