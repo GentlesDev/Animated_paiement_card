@@ -19,6 +19,9 @@
                 vos coordonnées bancaires</span> !</small>
         <div class="body-card">
             <div class="card">
+                <div class="branch">
+                    <img src="images/visa.png" alt="visa">
+                </div>
                 <img class="chip" src="images/chip.png" alt="card chip">
                 <img class="background" src="images/background_card.jpeg" alt="card background">
                 <div class="print-number">
@@ -32,13 +35,20 @@
                     <h2>Date d'expiration</h2>
                     <p>01</p>
                 </div>
-                <div class="print-crypt hide">
+            </div>
+            <div class="card-back">
+                <img class="background" src="images/background_card.jpeg" alt="card background">
+                <div class="black-band"></div>
+                <div class="print-crypt">
                     <h2>CCV</h2>
-                    <p>01</p>
+                    <input type="password">
+                </div>
+                <div class="branch">
+                    <img src="images/visa.png" alt="visa">
                 </div>
             </div>
             <div class="paiement-form">
-                <form method="get">
+                <form method="get" autocomplete="off">
                     <div class="form-info card-number">
                         <label for="card-number">Numéro de la carte / Card Number : </label>
                         <input type="text" id="card-number" name="cardNumber" placeholder="#### #### #### ####"

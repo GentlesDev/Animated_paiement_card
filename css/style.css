@@ -20,68 +20,124 @@
     position: relative;
 }
 
-.card .background {
+.card .background, .card-back .background {
     width: 450px;
     height: 250px;
     border-radius: 30px;
     position: absolute;
-    right: 250px;
+    right: 246px;
     bottom: 340px;
-    transform: rotateY(0);
     transition: all 2s;
 }
 
-.hide {
-    display: none;
+.card {
+    transition: all 2s;
+    transition-delay: 500ms;
+    z-index: 1;
+    opacity: 1;
 }
 
-.card h2 {
+.card-back {
+    transition: all 2s;
+    transition-delay: 500ms;
+    z-index: 0;
+    opacity: 0;
+    cursor: default;
+}
+
+.card h2, .card-back h2 {
     font-size: 12px;
 }
 
-.card p {
+.card p, .card-back input {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.card p, .card h2 {
+.card p, .card h2, .card-back input, .card-back h2 {
     margin: 0;
     color: wheat;
 }
 
+.card-back input[type="password"] {
+    border: none;
+    width: 7%;
+    padding-left: 390px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-back h2 {
+    padding-left: 365px;
+}
+
 .card .chip {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     width: 60px;
     top: -25px;
     left: 290px;
+    transform: rotateY(0);
+    transition: all 500ms;
 }
 
 .print-number {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 285px;
     top: 50px;
+    transition: all 500ms;
 }
 
 .print-name {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 270px;
     top: 110px;
+    transition: all 500ms;
 }
 
 .print-date {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 580px;
     top: 110px;
+    transition: all 500ms;
+}
+
+.black-band {
+    width: 450px;
+    background: black;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 247px;
+}
+
+.branch img{
+    width: 40%;
+}
+
+.card .branch, .card-back .branch {
+    position: absolute;
+    z-index: 2;
+}
+
+.card-back .branch {
+    right: 210px;
+    top: 130px;
+}
+
+.card .branch {
+    right: 220px;
+    top: -20px;
 }
 
 .print-crypt {
     position: absolute;
-    z-index: 1;
-    left: 610px;
+    z-index: 2;
+    left: 190px;
     top: 60px;
+    transition: all 500ms;
 }
 
 .paiement-form {
@@ -109,10 +165,11 @@
     border-radius: 10px;
     border: none;
     background: rgba(255, 255, 255, 0.5);
+    color: rgb(212, 16, 50);
 }
 
 .form-info input::placeholder {
-    color: #d41032;
+    color: rgba(212, 16, 50, 0.5);
 }
 
 .form-info.card-crypt, .form-info.card-date {
