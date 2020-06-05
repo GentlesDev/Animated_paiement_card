@@ -25,7 +25,25 @@
                 <img class="chip" src="images/chip.png" alt="card chip">
                 <img class="background" src="images/background_card.jpeg" alt="card background">
                 <div class="print-number">
-                    <p>01</p>
+                    <p id='0'>#</p>
+                    <p id='1'>#</p>
+                    <p id='2'>#</p>
+                    <p id='3'>#</p>
+                    <p class="esp">&nbsp;&nbsp;</p>
+                    <p id='4'>#</p>
+                    <p id='5'>#</p>
+                    <p id='6'>#</p>
+                    <p id='7'>#</p>
+                    <p class="esp">&nbsp;&nbsp;</p>
+                    <p id='8'>#</p>
+                    <p id='9'>#</p>
+                    <p id='10'>#</p>
+                    <p id='11'>#</p>
+                    <p class="esp">&nbsp;&nbsp;</p>
+                    <p id='12'>#</p>
+                    <p id='13'>#</p>
+                    <p id='14'>#</p>
+                    <p id='15'>#</p>
                 </div>
                 <div class="print-name">
                     <h2>Nom du propriétaire</h2>
@@ -41,7 +59,7 @@
                 <div class="black-band"></div>
                 <div class="print-crypt">
                     <h2>CCV</h2>
-                    <input type="password">
+                    <input type="password" disabled="disabled">
                 </div>
                 <div class="branch">
                     <img src="images/visa.png" alt="visa">
@@ -52,18 +70,18 @@
                     <div class="form-info card-number">
                         <label for="card-number">Numéro de la carte / Card Number : </label>
                         <input type="text" id="card-number" name="cardNumber" placeholder="#### #### #### ####"
-                            maxlength="16">
+                            maxlength="16" onkeypress="return onlyNumber(event)">
                     </div>
                     <div class="form-info card-name">
                         <label for="card-name">Nom du propriétaire / Card Owner : </label>
-                        <input type="text" id="card-name" name="cardName" placeholder="Will Smith">
+                        <input type="text" id="card-name" name="cardName" placeholder="Will Smith" onkeypress="return onlyChar(event)">
                     </div>
                     <div class="card-info">
                         <div class="form-info card-date">
                             <label for="card-date">Date d'expiration / Expiration Date : </label>
                             <div class="date">
                                 <select name="month" id="card-date">
-                                    <option value="month" selected>Mois / Month</option>
+                                    <option value="month" selected  disabled="disabled">Mois / Month</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -78,7 +96,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select name="year">
-                                    <option value="year" selected>Année / Year</option>
+                                    <option value="year" selected  disabled="disabled">Année / Year</option>
                                     <option value="2020">2020</option>
                                     <option value="2021">2021</option>
                                     <option value="2022">2022</option>
