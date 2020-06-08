@@ -47,11 +47,17 @@
                 </div>
                 <div class="print-name">
                     <h2>Nom du propriétaire</h2>
-                    <p>01</p>
+                    <div class="fill-name">
+                        <p>Will Smith</p>
+                    </div>
                 </div>
                 <div class="print-date">
                     <h2>Date d'expiration</h2>
-                    <p>01</p>
+                    <p>
+                        <span data-name="month"></span>
+                        <span data-name="sep"></span>
+                        <span data-name="year"></span>
+                    </p>
                 </div>
             </div>
             <div class="card-back">
@@ -82,20 +88,20 @@
                             <div class="date">
                                 <select name="month" id="card-date">
                                     <option value="month" selected  disabled="disabled">Mois / Month</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                 </select>
-                                <select name="year">
+                                <select name="year" id="card-year">
                                     <option value="year" selected  disabled="disabled">Année / Year</option>
                                     <option value="2020">2020</option>
                                     <option value="2021">2021</option>
@@ -112,7 +118,7 @@
                         </div>
                         <div class="form-info card-crypt">
                             <label for="card-crypt">CCV : </label>
-                            <input type="text" id="card-crypt" name="cardCrypt" placeholder="****" maxlength="4">
+                            <input type="text" id="card-crypt" name="cardCrypt" placeholder="****" maxlength="4" onkeypress="return onlyNumber(event)">
                         </div>
                     </div>
                     <div class="form-info submit">

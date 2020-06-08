@@ -104,6 +104,18 @@
     transition: all 500ms;
 }
 
+.fill-name {
+    display: flex;
+    width: 300px;
+    overflow-y: hidden;
+    text-transform: uppercase;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 .print-date {
     position: absolute;
     z-index: 2;
