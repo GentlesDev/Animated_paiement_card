@@ -116,6 +116,10 @@
     background: transparent;
 }
 
+span.span {
+    display: block;
+}
+
 .print-date {
     position: absolute;
     z-index: 2;
@@ -134,7 +138,7 @@
 }
 
 .branch img {
-    width: 40%;
+    width: 50px;
 }
 
 .card .branch, .card-back .branch {
@@ -143,13 +147,13 @@
 }
 
 .card-back .branch {
-    right: 210px;
-    top: 130px;
+    right: 275px;
+    top: 140px;
 }
 
 .card .branch {
-    right: 220px;
-    top: -20px;
+    right: 280px;
+    top: -15px;
 }
 
 .print-crypt {
@@ -299,4 +303,36 @@
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
+}
+
+.popup {
+    position: absolute;
+    top: 415px;
+    left: 738px;
+    background: rgba(36, 65, 99, 0.8);
+    padding: 20px;
+    border-radius: 25px;
+    border: 1px solid #d11057;
+    box-shadow: 5px 30px 60px black;
+    z-index: 99;
+    transition: all 1s;
+}
+
+.popup h2 {
+    color: white;
+}
+
+.popup button {
+    width: 10px;
+    margin: 0;
+    margin-left: auto;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background: none;
+    display: block;
+}
+
+.hide {
+    top: -999px;
 }

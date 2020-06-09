@@ -39,10 +39,12 @@ function onlyNumber(evt) {
 }
 
 $('#card-number').on('keyup', (evt) => {
+    let visa = $('.branch img');
     if ($('#card-number').val().length == 0) {
         for (let i = 0; i < 16; i++) {
             $('#' + i).text('#');
         }
+        visa.attr('src', 'images/visa.png');
     } else {
         for (let i = 0; i < $('#card-number').val().length; i++) {
             if (evt.key === 'Backspace') {
@@ -54,9 +56,33 @@ $('#card-number').on('keyup', (evt) => {
             } else {
                 let pos2 = $('#card-number').val().length - 1;
                 let replace = $('#card-number').val().charAt(i);
+                //console.log($('#card-number').val().substr(0, 2));
                 $('#' + pos2).fadeOut(400, function () {
-                    $('#' + pos2).text(replace).fadeIn(400);
+                    if (pos2 > 3 && pos2 < 14) {
+                        $('#' + pos2).text('*').fadeIn(400);
+                    } else {
+                        $('#' + pos2).text(replace).fadeIn(400);
+                    }
                 });
+                if ($('#card-number').val().substr(0, 2) == 51) {
+                    console.log('master card');
+                    visa.attr('src', 'images/mastercard.png');
+                } else if ($('#card-number').val().substr(0, 2) == 37) {
+                    console.log('american ex');
+                    visa.attr('src', 'images/amex.png');
+                } else if ($('#card-number').val().substr(0, 2) == 60) {
+                    console.log('discover');
+                    visa.attr('src', 'images/discover.png');
+                } else if ($('#card-number').val().substr(0, 2) == 30) {
+                    console.log('diners club');
+                    visa.attr('src', 'images/dinersclub.png');
+                } else if ($('#card-number').val().substr(0, 2) == 35) {
+                    console.log('jcb');
+                    visa.attr('src', 'images/jcb.png');
+                } else {
+                    console.log('visa');
+                    visa.attr('src', 'images/visa.png');
+                }
             }
         }
     }
@@ -71,21 +97,25 @@ function onlyChar(evt) {
 }
 
 $('#card-name').on('keyup', (evt) => {
+    //console.log(evt.key);
+
     if ($('#card-name').val().length == 0) {
         $('.print-name p').html('Will Smith');
     } else {
-        $('.fill-name').html('<p></p>');
-        for (let i = 0; i < $('#card-name').val().length; i++) {
-            if (evt.key != 'Backspace') {
+        $('.fill-name').html('<p data-name=first style="display:flex;"></p>');
+        if (evt.key != 'Backspace' || evt.key != 'ArrowRight' || evt.key != 'ArrowLeft' || evt.key != 'ArrowUp' || evt.key != 'ArrowDown') {
+            //console.log(evt.key);
+            for (let i = 0; i < $('#card-name').val().length; i++) {
                 let replace = $('#card-name').val().charAt(i);
-                $('.fill-name').fadeOut(400, function () {
-                    $('.fill-name').append('<p data-id=' + i + '>' + replace + '</p>').fadeIn(400);
-                });
-            } else if (evt.key === 'Backspace') {
-                $('.fill-name').fadeOut(400, function () {
-                    $('.fill-name').html($('#card-name').val()).fadeIn(400);
-                });
+                //console.log(replace);
+                $('.span').removeAttr('id');
+                if (replace == " ") {
+                    $('p[data-name=first]').append('<span class="span" id="current" style="width:10px" data-id=' + i + '>' + replace + '</span>');
+                } else {
+                    $('p[data-name=first]').append('<span class="span" id="current" data-id=' + i + '>' + replace + '</span>');
+                }
             }
+            $('#current').hide().show('slow');
         }
     }
 });
@@ -94,14 +124,21 @@ $('#card-date').on('change', () => {
     $('span[data-name= month]').fadeOut(400, function () {
         $('span[data-name= month]').html($('#card-date').val()).fadeIn(400);
     });
-})
+});
 
 $('#card-year').on('change', () => {
     $('span[data-name= year]').fadeOut(400, function () {
         $('span[data-name= year]').html($('#card-year').val()).fadeIn(400);
     });
-})
+});
 
+$('.popup button').on('click', () => {
+    $('.popup').addClass('hide');
+});
+
+$('.submit').on('click', () => {
+    $('.popup').removeClass('hide');
+});
 
 
 
